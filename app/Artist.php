@@ -6,6 +6,7 @@ class Artist extends Model {
 
 	//
 	protected $table = 'artists';
+	protected $fillable = ['name'];
 	public $timestamps = false;
 
 }

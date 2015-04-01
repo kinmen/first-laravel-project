@@ -19,3 +19,5 @@ Route::controllers([
 	'auth' => 'Auth\AuthController',
 	'password' => 'Auth\PasswordController',
 ]);
+
+Route::resource('artists', 'ArtistController',['only' => ['index', 'store', 'show', 'update', 'destroy']]);
