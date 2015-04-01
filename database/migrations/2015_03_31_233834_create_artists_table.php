@@ -12,7 +12,7 @@ class CreateArtistsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::table('artists', function(Blueprint $table)
+		Schema::create('artists', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->string('name');
