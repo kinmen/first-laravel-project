@@ -19,15 +19,6 @@ class ArtistController extends Controller {
 		return Artist::all();
 	}
 
-	/**
-	 * Show the form for creating a new resource.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-	}
 
 	/**
 	 * Store a newly created resource in storage.
@@ -48,19 +39,14 @@ class ArtistController extends Controller {
 	 */
 	public function show($id)
 	{
-		return Artist::find($id);
+		$artist = Artist::find($id);
+		if ($artist == null) {
+			return response("No artist found", 500);
+		} else {
+			return response($artist,200);
+		}
 	}
 
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
 
 	/**
 	 * Update the specified resource in storage.
@@ -71,10 +57,13 @@ class ArtistController extends Controller {
 	public function update(Request $request, $id)
 	{
 		$artist = Artist::find($id);
+		if ($artist == null) {
+			return response("No artist found", 500);
+		}
 		$name = $request->input('name');
 		$artist->name = $name;
 		$artist->save();
-		return $artist;
+		return response($artist, 200);
 	}
 
 	/**
