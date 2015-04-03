@@ -9,6 +9,14 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
 			templateUrl: 'app/js/views/list.php',
 			controller: 'artistController'
 		}).
+		when('/add', {
+			templateUrl: 'app/js/views/add.php',
+			controller: 'artistController'
+		}).
+		when('/:id', {
+			templateUrl: 'app/js/views/edit.php',
+			controller: 'artistController'
+		}).
 		otherwise({
 			redirectTo: '/'
 		});
