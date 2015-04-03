@@ -25,6 +25,7 @@ app.controller('artistController', function($scope, $http, $location, artistServ
 
 		$scope.editArtist = function(newname) {
 			artistService.editArtistTo(newname)
+			$location.path('/');
 		}
 
 		$scope.deleteArtist = function(artist) {
