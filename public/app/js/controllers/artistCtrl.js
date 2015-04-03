@@ -1,6 +1,10 @@
-app.controller('artistController', function($scope, $http, Artist){
-		$scope.artists = []
-		$http.get('/artists').success(function(data,status,headers,config){
-			$scope.artists = data;
-		})
-	})
+'use strict';
+// angular.module('artistCtrl', [])
+
+app.controller('artistController', function($scope, $http, artistService){
+		console.log('ran controller');
+		$scope.artistService = artistService;
+		artistService.getAllArtists();
+
+
+	});
