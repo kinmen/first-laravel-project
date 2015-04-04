@@ -45,5 +45,9 @@ app.factory("artistService", function($http) {
 		})
 	};
 
+	service.clearCurr = function() {
+		service.currArtist = {};
+	};
+
 	return service;
 });

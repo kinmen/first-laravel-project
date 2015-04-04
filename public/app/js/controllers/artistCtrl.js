@@ -6,6 +6,11 @@ app.controller('artistController', function($scope, $http, $location, artistServ
 		$scope.artistService = artistService;
 		artistService.getAllArtists();
 
+		$scope.home = function() {
+			artistService.clearCurr();
+			$location.path('/');
+		};
+
 		$scope.goToCreateView = function() {
 			console.log("change to create");
 			$location.path('/add');
