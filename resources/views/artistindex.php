@@ -8,7 +8,7 @@
 		<script src="app/js/controllers/artistCtrl.js"></script>
 		<script src="app/js/services/artistService.js"></script>
 		<base href="/">
-		<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
+		<link href='//fonts.googleapis.com/css?family=Lato:100,300,400,700,900' rel='stylesheet' type='text/css'>
 		<link href="css/artist.css" rel = 'stylesheet'>
 
 
