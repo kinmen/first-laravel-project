@@ -4,7 +4,9 @@
 app.controller('artistController', function($scope, $http, $location, artistService){
 		console.log('ran controller');
 		$scope.artistService = artistService;
-		artistService.getAllArtists();
+		if ($location.path() == '/') {
+			artistService.getAllArtists();
+		}
 
 		$scope.home = function() {
 			artistService.clearCurr();
